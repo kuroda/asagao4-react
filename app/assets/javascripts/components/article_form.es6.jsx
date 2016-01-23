@@ -22,14 +22,14 @@ class ArticleForm extends React.Component {
             <tr>
               <th><label htmlFor='article_released_at_1i'>掲載開始日時</label></th>
               <td>
-                <DateSelect objectName='article' attrName='released_at'
+                <DatetimeSelect objectName='article' attrName='released_at'
                   startYear='2000' defaultValue={this.props.released_at} />
               </td>
             </tr>
             <tr>
               <th><label htmlFor='article_expired_at_1i'>掲載終了日時</label></th>
               <td>
-                <DateSelect objectName='article' attrName='expired_at'
+                <DatetimeSelect objectName='article' attrName='expired_at'
                   startYear='2000' defaultValue={this.props.expired_at} />
               </td>
             </tr>

@@ -1,4 +1,4 @@
-class DateSelect extends React.Component {
+class DatetimeSelect extends React.Component {
   fieldName(n) {
     `${this.props.objectName}[${this.props.attrName}(${n}i)]`
   }

@@ -22,7 +22,7 @@ class DateSelect extends React.Component {
           })
         }
       </select>
-      &nbsp;
+      {' '}
       <select name={this.fieldName(2)} defaultValue={d.getMonth() + 1}>
         {
           _.range(0, 12).map(i => {
@@ -30,7 +30,7 @@ class DateSelect extends React.Component {
           })
         }
       </select>
-      &nbsp;
+      {' '}
       <select name={this.fieldName(3)} defaultValue={d.getDate()}>
         {
           _.range(0, 31).map(i => {
@@ -38,7 +38,7 @@ class DateSelect extends React.Component {
           })
         }
       </select>
-      &nbsp;—&nbsp;
+      {' — '}
       <select name={this.fieldName(4)} defaultValue={d.getHours()}>
         {
           _.range(0, 24).map(i => {
@@ -46,7 +46,7 @@ class DateSelect extends React.Component {
           })
         }
       </select>
-      &nbsp;:&nbsp;
+      {' : '}
       <select name={this.fieldName(5)} defaultValue={d.getMinutes()}>
         {
           _.range(0, 60).map(i => {

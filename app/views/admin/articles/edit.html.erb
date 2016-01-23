@@ -3,6 +3,8 @@
 
 <p><%= link_to "記事の詳細に戻る", [:admin, @article] %></p>
 
+<%= react_component('ArticleForm', @article) %>
+
 <%= form_for [:admin, @article] do |form| %>
 <%= render "form", form: form %>
 <p><%= form.submit %></p>

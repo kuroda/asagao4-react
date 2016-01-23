@@ -25,5 +25,9 @@ Rails.application.routes.draw do
     resources :articles
   end
 
+  namespace :api do
+    resources :articles, only: [:show]
+  end
+
   match "*anything" => "top#not_found", via: [:get, :post, :patch, :delete]
 end

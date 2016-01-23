@@ -13,3 +13,5 @@
 ```
 bin/rails g react:component ArticleForm
 ```
+
+## `api/articles#show` アクションを作成

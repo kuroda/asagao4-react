@@ -1,6 +1,6 @@
 class DatetimeSelect extends React.Component {
   fieldName(n) {
-    `${this.props.objectName}[${this.props.attrName}(${n}i)]`
+    return `${this.props.objectName}[${this.props.attrName}(${n}i)]`
   }
 
   render() {
@@ -50,7 +50,7 @@ class DatetimeSelect extends React.Component {
       <select name={this.fieldName(5)} defaultValue={d.getMinutes()}>
         {
           _.range(0, 60).map(i => {
-            return <option key={i} value={i + 1}>{i + 1}</option>
+            return <option key={i} value={i}>{i}</option>
           })
         }
       </select>

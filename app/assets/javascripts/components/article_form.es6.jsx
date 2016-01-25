@@ -4,11 +4,15 @@ class ArticleForm extends React.Component {
     this.state = props
   }
 
+  changeExpiredAt(e) {
+    this.setState({ no_expiration: e.target.checked })
+  }
+
   render() {
     let csrfToken = $('meta[name=csrf-token]').attr('content')
     return (
       <form action='/admin/articles/10' method='post'
-        accept-charset='UTF-8'>
+        acceptCharset='UTF-8'>
         <input type='hidden' name='_method' value='patch' />
         <input type='hidden' name='utf8' value='✓' />
         <input type='hidden' name='authenticity_token' value={csrfToken} />
@@ -36,10 +40,14 @@ class ArticleForm extends React.Component {
               <td>
                 <input type='hidden' name='article[no_expiration]' value='0' />
                 <input type='checkbox' name='article[no_expiration]' value='1'
-                  id='article_member_only' checked={this.props.no_expiration} />
+                  id='article_member_only' checked={this.state.no_expiration}
+                  onChange={this.changeExpiredAt.bind(this)} />
                 <label htmlFor='article_no_expiration'>掲載終了日を設定しない</label>
-                <DatetimeSelect objectName='article' attrName='expired_at'
-                  startYear='2000' defaultValue={this.props.expired_at} />
+                {
+                  this.state.no_expiration ? null :
+                    <DatetimeSelect objectName='article' attrName='expired_at'
+                      startYear='2000' defaultValue={this.props.expired_at} />
+                }
               </td>
             </tr>
             <tr>
@@ -47,7 +55,7 @@ class ArticleForm extends React.Component {
               <td>
                 <input type='hidden' name='article[member_only]' value='0' />
                 <input type='checkbox' name='article[member_only]' value='1'
-                  id='article_member_only' checked={this.props.member_only} />
+                  id='article_member_only' defaultChecked={this.props.member_only} />
                 <label htmlFor='article_member_only'>会員限定</label>
               </td>
             </tr>

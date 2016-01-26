@@ -9,11 +9,16 @@ class ArticleForm extends React.Component {
   }
 
   render() {
+    let path = this.props.id ?
+      `/admin/articles/${this.props.id}` : '/admin/articles'
+    let httpMethod = this.props.id ? 'patch' : 'post'
     let csrfToken = $('meta[name=csrf-token]').attr('content')
+    let submitButtonLabel = this.props.id ?
+      '更新する' : '登録する'
     return (
-      <form action='/admin/articles/10' method='post'
+      <form action={path} method='post'
         acceptCharset='UTF-8'>
-        <input type='hidden' name='_method' value='patch' />
+        <input type='hidden' name='_method' value={httpMethod} />
         <input type='hidden' name='utf8' value='✓' />
         <input type='hidden' name='authenticity_token' value={csrfToken} />
         <table className='attr'>
@@ -61,7 +66,7 @@ class ArticleForm extends React.Component {
             </tr>
           </tbody>
         </table>
-        <p><input type='submit' name='commit' value='更新する' /></p>
+        <p><input type='submit' name='commit' value={submitButtonLabel} /></p>
       </form>
     )
   }

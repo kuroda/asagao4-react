@@ -3,4 +3,5 @@
 
 <p><%= link_to "記事の詳細に戻る", [:admin, @article] %></p>
 
-<%= react_component('ArticleForm', @article) %>
+<%= react_component('ArticleForm',
+  { object: @article, errors: @article.errors.as_json }) %>

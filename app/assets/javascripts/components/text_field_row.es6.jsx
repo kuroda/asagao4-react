@@ -1,17 +1,28 @@
 class TextFieldRow extends React.Component {
   labelFor() {
-    return <label htmlFor={this.props.htmlFor}>{this.props.text}</label>
+    let labelText = this.props.labelText || this.props.attrName
+    return <label htmlFor={this.elementId()}>{labelText}</label>
   }
 
   textField() {
+    let object = this.props.object
+    let attrName = this.props.attrName
     return <input size={this.props.size} type='text'
-      name={`${this.props.paramName}[${this.props.attrName}]`}
-      id={`${this.props.paramName}_${this.props.attrName}`}
-      defaultValue={this.props.object.title} />
+      name={`${this.prefix()}[${attrName}]`}
+      id={this.elementId}
+      defaultValue={object[attrName]} />
+  }
+
+  elementId() {
+    `${this.prefix()}_${this.props.attrName}`
+  }
+
+  prefix() {
+    return this.props.prefix || this.props.object.modelName
   }
 
   render() {
-    if (_.isEmpty(this.props.errors))
+    if (_.isEmpty(this.props.object.errors))
       return <tr>
         <th>{ this.labelFor() }</th>
         <td>{ this.textField() }</td>

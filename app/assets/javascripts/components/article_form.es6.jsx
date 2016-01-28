@@ -26,10 +26,8 @@ class ArticleForm extends React.Component {
           <tbody>
             <TextFieldRow
               object={this.props.object}
-              errors={this.props.errors}
-              paramName={paramName}
               attrName='title'
-              text='タイトル'
+              labelText='タイトル'
               size='20'
             />
             <tr>

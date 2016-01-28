@@ -1,9 +1,4 @@
 <% @page_title = "ニュース記事の新規登録" %>
 <h1><%= @page_title %></h1>
 
-<%= react_component('ArticleForm',
-  {
-    object: @article, errors: @article.errors.as_json,
-    csrfToken: request_forgery_protection_token 
-  },
-  prerender: true) %>
+<%= react_form_component('ArticleForm', @article) %>

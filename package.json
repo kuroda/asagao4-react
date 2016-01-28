@@ -1,0 +1,10 @@
+{
+  "name": "asagao4-react",
+  "private": "true",
+  "version": "0.0.1",
+  "dependencies": {
+    "browserify": "^13.0.0",
+    "browserify-incremental": "^3.0.1",
+    "inflected": "^1.1.6"
+  }
+}

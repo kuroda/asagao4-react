@@ -1,3 +1,5 @@
+// var Inflector = require('inflected')
+
 class TextFieldRow extends React.Component {
   labelFor() {
     let labelText = this.props.labelText || this.props.attrName

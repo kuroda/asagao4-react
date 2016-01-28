@@ -5,4 +5,5 @@
 //= require react_ujs
 //= require components
 //= require lodash
+//= require inflected
 //= require_tree .

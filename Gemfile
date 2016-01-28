@@ -56,3 +56,4 @@ gem 'coffee-script-source', '1.8.0'
 
 gem 'react-rails', '~> 1.5.0'
 gem 'lodash-rails', '~> 4.0.0'
+gem 'browserify-rails'

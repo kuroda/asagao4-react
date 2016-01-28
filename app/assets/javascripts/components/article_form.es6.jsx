@@ -14,14 +14,14 @@ class ArticleForm extends React.Component {
     let path = object.id ?
       `/admin/articles/${object.id}` : '/admin/articles'
     let httpMethod = object.id ? 'patch' : 'post'
-    let csrfToken = $('meta[name=csrf-token]').attr('content')
     let submitButtonLabel = object.id ? '更新する' : '登録する'
     return (
       <form action={path} method='post'
         acceptCharset='UTF-8'>
         <input type='hidden' name='_method' value={httpMethod} />
         <input type='hidden' name='utf8' value='✓' />
-        <input type='hidden' name='authenticity_token' value={csrfToken} />
+        <input type='hidden' name='authenticity_token'
+          value={this.props.csrfToken} />
         <table className='attr'>
           <tbody>
             <TextFieldRow

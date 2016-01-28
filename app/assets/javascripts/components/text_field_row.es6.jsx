@@ -9,12 +9,12 @@ class TextFieldRow extends React.Component {
     let attrName = this.props.attrName
     return <input size={this.props.size} type='text'
       name={`${this.prefix()}[${attrName}]`}
-      id={this.elementId}
+      id={this.elementId()}
       defaultValue={object[attrName]} />
   }
 
   elementId() {
-    `${this.prefix()}_${this.props.attrName}`
+    return `${this.prefix()}_${this.props.attrName}`
   }
 
   prefix() {
